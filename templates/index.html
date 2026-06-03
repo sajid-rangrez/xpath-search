@@ -99,14 +99,14 @@
 <body>
 
     <div class="header-container">
-        <h1>XPath Hunter</h1>
-        <button type="button" class="btn btn-toggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
+        <h1>XPath Search</h1>
+        <button type="button" class="btn btn-toggle" onclick="toggleTheme()">🌓</button>
     </div>
 
     <form id="xpathForm" hx-post="/process" hx-encoding="multipart/form-data" hx-target="#resultView" class="container">
         
         <div class="card">
-            <h2>1. Data Source Input (XML)</h2>
+            <h2>Data Source Input (XML)</h2>
             <div class="form-group">
                 <label style="font-weight: bold; display: block; margin-bottom: 5px;">Upload XML File:</label>
                 <input type="file" name="xml_file" accept=".xml">
@@ -116,7 +116,7 @@
                 <textarea name="xml_text" placeholder="<xml> paste data here... </xml>"></textarea>
             </div>
 
-            <h2>2. Configure Path Mappings</h2>
+            <h2>Configure Path Mappings</h2>
             <div class="form-group" style="background: var(--bulk-box-bg); padding: 12px; border-radius: 6px; border: 1px solid var(--bulk-box-border); color: var(--bulk-box-text);">
                 <label style="font-weight: bold; display: block; margin-bottom: 5px;">Bulk Load XPaths from CSV:</label>
                 <input type="file" id="configCsv" accept=".csv" onchange="loadConfigCSV(this)">
@@ -138,7 +138,7 @@
         </div>
 
         <div class="card">
-            <h2>3. Extracted Key-Value Rows</h2>
+            <h2>Results</h2>
             <div id="resultView">
                 <p style="color: #7f8c8d; font-style: italic;">Provide data and map settings to generate row extractions...</p>
             </div>
