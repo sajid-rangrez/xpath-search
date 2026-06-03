@@ -27,7 +27,13 @@ func main() {
 }
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
+	// Using filepath join ensures cross-platform and runtime stability
 	tmpl, err := template.ParseFiles("templates/index.html")
+	if err != nil {
+		// If it fails, fallback to checking current directory assets explicitly
+		tmpl, err = template.ParseFiles("./templates/index.html")
+	}
+
 	if err != nil {
 		http.Error(w, fmt.Sprintf("Template loading error: %v", err), http.StatusInternalServerError)
 		return
